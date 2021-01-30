@@ -31,4 +31,4 @@ const width = images.map(function(image){
 })
 
 console.log(width);
-//["10px","20px","30px"]
+//出力["10px","20px","30px"]

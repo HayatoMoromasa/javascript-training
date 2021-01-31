@@ -8,12 +8,11 @@ const nameArr2 = nameArr.map((name)=> {
 })
 
 console.log(nameArr2);
-//出力["apple", "banana", "lemon"]
+//["apple", "banana", "lemon"]
 
 
 //配列をループさせてなにか処理する使い方
 nameArr.map((name)=> console.log(name));
-//出力
 //apple
 //banana
 //lemon
@@ -31,4 +30,23 @@ const width = images.map(function(image){
 })
 
 console.log(width);
-//出力["10px","20px","30px"]
+//["10px","20px","30px"]
+
+
+//〜番目は〜ですの使い方
+nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です`));
+//1番目はappleです
+//2番目はbananaです
+//3番目はlemonです
+
+//条件分岐の使い方
+const newNameArr = nameArr.map((name) => {
+    if (name === "apple") {
+        return `${name}食べた`
+    } else {
+        return `${name}食べたい`
+    }
+})
+
+console.log(newNameArr);
+//["apple食べた", "banana食べたい", "lemon食べたい"]

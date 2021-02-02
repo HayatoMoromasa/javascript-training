@@ -48,5 +48,48 @@ console.log(newNumArr);
 
 
 
+//▼複数条件の絞り込み
+//例1
+const people = [
+    { name: 'ken', gender: 'male', age: 25, area: 'japan'},
+    { name: 'bob', gender: 'male', age: 20, area: 'usa'},
+    { name: 'sarah', gender: 'female', age: 28, area: 'france'},
+    { name: 'kim', gender: 'male', age: 30, area: 'korea'},
+    { name: 'joanah', gender: 'female', age: 22, area: 'philippines'},
+]
+
+const filteredPeople = people.filter((person) => {
+    return person.gender === 'male'
+            && person.age > 20
+            && person.area === 'japan'
+});
+
+const filteredPeople2 = people.filter((person) => {
+    return person.age > 30  || person.area === 'china'
+})
+
+console.log(filteredPeople);
+//[{ name: 'ken', gender: 'male', age: 25, area: 'japan'}]
+console.log(filteredPeople2);
+//[]が返る
 
 
+//▼紐付いた対象を絞り込む
+const post = { id: 1, title: '初投稿で〜す'};
+const comments = [
+    { postId: 1,  content: 'いい記事やん' },
+    { postId: 2,  content: '手抜き?' },
+    { postId: 1,  content: 'こんちは' },
+];
+
+//idとpostIdを紐付ける
+//引数には対象となるpostと、抜き取りたいcommentsが入る
+function commentsForPost(post, comments) {
+    return comments.filter((comment) => {
+        return comment.postId === post.id;
+    });
+}
+
+console.log(commentsForPost(post, comments));
+//[{postId: 1, content: "いい記事やん"},
+//{postId: 1, content: "こんちは"}]が返る

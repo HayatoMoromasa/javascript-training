@@ -64,3 +64,4 @@ function postForComment(posts, comments) {
 }
 
 console.log(postForComment(posts,comments));
+//{id: 2, title: "新しい投稿"}

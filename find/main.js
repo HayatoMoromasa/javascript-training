@@ -29,3 +29,38 @@ const bob = users.find(function(user) {
 console.log(bob);
 //{name: "bob"}
 
+
+
+
+function Car(model) {
+    this.model = model;
+}
+
+const cars = [
+    new Car('Yaris'),
+    new Car('ROOMY'),
+    new Car('AQUA')
+]
+
+const foundCar = cars.find(function(car){
+    return car.model === 'AQUA'
+})
+
+console.log(foundCar);
+//Car {model:"AQUA"}
+
+
+const posts = [
+    { id: 1, title: '古い投稿' },
+    { id: 2, title: '新しい投稿' },
+];
+
+const comments = { postId: 2, content: 'いいね' }
+
+function postForComment(posts, comments) {
+    return posts.find(function(post) {
+        return post.id === comments.postId
+    })
+}
+
+console.log(postForComment(posts,comments));

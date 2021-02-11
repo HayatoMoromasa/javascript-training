@@ -53,3 +53,33 @@ console.log(color);
 //メソッド内ではミューテートしてもいいというポリシーの元の書き方
 
 
+//例3 <>の数と向きが左右対称かを確かめたいとき(><はNG)
+function balancedParens(string){
+    return !string.split('').reduce(function(previous,char){
+        if ( previous < 0 ) { return previous; }
+        if ( char === '<') { return previous + 1; }
+        if ( char === '>' ) { return previous - 1; }
+    },0)
+}
+console.log(balancedParens('<>'))
+//true
+console.log(balancedParens('<>>'))
+//false
+console.log(balancedParens('><'))
+//false
+
+
+//例4　走行距離を求める
+const trips = [
+    { distance: 34 },
+    { distance: 60 },
+    { distance: 20 }
+];
+
+
+const totalDistance = trips.reduce((sum,trip)=>{
+    return trip.distance + sum;
+},0)
+
+console.log(totalDistance);
+//114

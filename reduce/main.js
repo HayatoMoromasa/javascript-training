@@ -54,18 +54,18 @@ console.log(color);
 
 
 //例3 <>の数と向きが左右対称かを確かめたいとき(><はNG)
-function balancedParens(string){
+function balancedBracket(string){
     return !string.split('').reduce(function(previous,char){
         if ( previous < 0 ) { return previous; }
         if ( char === '<') { return previous + 1; }
         if ( char === '>' ) { return previous - 1; }
     },0)
 }
-console.log(balancedParens('<>'))
+console.log(balancedBracket('<>'))
 //true
-console.log(balancedParens('<>>'))
+console.log(balancedBracket('<>>'))
 //false
-console.log(balancedParens('><'))
+console.log(balancedBracket('><'))
 //false
 
 

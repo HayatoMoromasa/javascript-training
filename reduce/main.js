@@ -83,3 +83,31 @@ const totalDistance = trips.reduce((sum,trip)=>{
 
 console.log(totalDistance);
 //114
+
+
+//例5 職場の通常のデスク(sitting)とスタンディングデスク(standing)の数を集計
+//結果は{ sitting: x, standing: y}の形にする
+
+const desks = [
+    { type: 'sitting' },
+    { type: 'standing' },
+    { type: 'sitting' },
+    { type: 'sitting' },
+    { type: 'standing' },
+    { type: 'standing' },
+    { type: 'standing' },
+    { type: 'sitting' },
+    { type: 'sitting' },
+    { type: 'standing' }
+];
+
+const deskTypes = desks.reduce((sum, desk) => {
+    if(desk.type === 'sitting') {
+        sum.sitting ++;
+    } else {
+        sum.standing ++;
+    }
+    return sum;
+},{ sitting: 0, standing: 0 });
+console.log(deskTypes);
+//{sitting: 5, standing: 5}

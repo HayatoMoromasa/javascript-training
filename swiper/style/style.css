@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.image-container .image-item {
+  width: 335px;
+  height: 335px;
+}
+
+.image-container .image-item > img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+img {
+  width: 100%;
+}
+
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-container.slider {
+  height: 80vh;
+}
+
+.swiper-container.slider-thumbnail {
+  height: 20vh;
+}
+
+.swiper-container.slider-thumbnail .swiper-wrapper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+.swiper-container.slider-thumbnail .swiper-wrapper .swiper-slide.swiper-slide-thumb-active {
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */

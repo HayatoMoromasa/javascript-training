@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.image-container {
+  .image-item {
+    width: 335px;
+    height: 335px;
+    > img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+img {
+  width: 100%;
+}
+.swiper-container {
+  width: 100%;
+
+  //スライダー
+  &.slider {
+    height: 80vh;
+  }
+
+  //スライダーサムネイル
+  &.slider-thumbnail {
+    height: 20vh;
+
+    .swiper-wrapper {
+      .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.5;
+        overflow: hidden;
+
+        &.swiper-slide-thumb-active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
